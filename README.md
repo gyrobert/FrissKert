@@ -1,1 +1,2 @@
 # FrissKert
+Applikacio es Weblap
