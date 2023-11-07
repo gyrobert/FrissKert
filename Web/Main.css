@@ -1,8 +1,8 @@
-.rendez{
+.gombok{
     display: flex;
     justify-content: right;
     align-items: right;
-    height: 30px;
+    height: 100px;
     padding:50px;
      }
 body {
@@ -12,11 +12,38 @@ body {
     background-size: cover;
 }
 h1{
+    color:white;
     text-align: center;
+    margin-top: 7%;
 }
-.home,.login, .signup
+.vasarlok, .eladok, .sign
 {
-    border-radius: 50%;
+    border-radius: 8px;
+    color: white;
     font-size: 20px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-right: 20px;
+}
+.vasarlok{
+    background-color: rgb(76, 198, 141);
+}
+.eladok{
+    background-color: rgb(112, 173, 71);
+}
+.sign{
+    background-color: rgb(91, 155, 213);
+}
+.kosar{
+    background:url(Kosar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    font-size: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 5px;
+    margin-right: 20px;
+}
+.fiok{
+    background:url(Fiok.png);
+    font-size: 24px;
 }
