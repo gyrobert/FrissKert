@@ -1,24 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {ImageBackground, StyleSheet, Text, View } from 'react-native';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-<<<<<<< Updated upstream
-      <Text>Open your app!</Text>
-=======
-      <Text>Open zour app!</Text>
->>>>>>> Stashed changes
-      <StatusBar style="auto" />
-    </View>
+   
+    <ImageBackground source={require('../../App/FrissKert_App/assets/hatter.png')} resizeMode="cover" style={styles.image}>
+  
+      <Text style={styles.text}>
+
+      Frisskert</Text>
+      
+    </ImageBackground>
+  </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+  },
+  header:{
+
+    padding: 50,
+  },
+  image: {
+    flex: 1,
     justifyContent: 'center',
   },
+  text: {
+    color: 'white',
+    fontSize: 60,
+    lineHeight: 84,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    
+  },
 });
+
