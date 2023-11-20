@@ -31,10 +31,11 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 60,
+    fontSize: 10,
     lineHeight: 84,
     fontWeight: 'bold',
     textAlign: 'center',
+    
     
   },
 });
