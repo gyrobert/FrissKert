@@ -39,13 +39,19 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    
     color: #fff;
     margin: 0 auto;
+    
+    
+}
+
+form > * {
+    opacity: 1;
 }
 
 .hatter h1{
     text-align: center;
+    
 }
 
 .input-box {
@@ -62,5 +68,15 @@ h1{
 .hatter .btn {
 width: 100%;
 height: 45px;
-
+background-color: rgb(91, 155, 213) ;
 }
+
+input[type=email]{
+width: 100%;
+height: 20px;
+}
+
+input[type=password]{
+    width: 100%;
+    height: 20px;
+    }

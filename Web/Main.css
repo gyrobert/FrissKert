@@ -55,3 +55,7 @@ h1{
     padding:5px;
     margin-right: 15px;
 }
+
+.frisskert-cim {
+    text-shadow: 0 0 5px black;
+}
