@@ -16,7 +16,7 @@ body{
 
 header {
 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -41,7 +41,7 @@ header {
     color: yellow;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .navigacio a::after {
@@ -85,7 +85,7 @@ header {
 
 
 .box{
-    position: relative;
+    position: flex;
     width: 400px;
     height: 440px;
     background: transparent;
@@ -97,11 +97,14 @@ header {
     justify-content: center;
     align-items: center;
     
+    
     transition: height s ease,width .2s ease;
 }
 .box.active{
-    height: 500px;
-   min-width:  500px;
+   height: 800px;
+   min-width:  50px;
+   margin-top: 100px;
+   margin-bottom: 50px;
 }
 
 .box.active .box_login{
@@ -109,6 +112,12 @@ header {
     transform: translateX(-400px);
 
 }
+.box.active .box_register{
+
+margin-top: 20px;
+}
+
+
 
 .box .box_login{
     width: 100%;
@@ -219,3 +228,9 @@ transform: translateX(400px);
     color: floralwhite;
 
 }
+
+
+
+
+
+
