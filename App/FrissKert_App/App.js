@@ -5,12 +5,13 @@ import {ImageBackground, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
+    
    
     <ImageBackground source={require('../../App/FrissKert_App/assets/hatter.png')} resizeMode="cover" style={styles.image}>
   
       <Text style={styles.text}>
 
-      Frisskert</Text>
+      Frisgjskert</Text>
       
     </ImageBackground>
   </View>
