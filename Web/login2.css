@@ -96,8 +96,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
+    overflow: hidden;
     transition: height s ease,width .2s ease;
 }
 .box.active{
@@ -112,11 +111,23 @@ header {
     transform: translateX(-400px);
 
 }
-.box.active .box_register{
+.box .box_login{
+    transition: transform .18s ease;
+    transform: translateX(0px);
 
-margin-top: 20px;
 }
+.box.active .box_register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
 
+}
+.box.active .box_register{
+    
+transition: transform .18s ease;
+    transform: translateX(0px);
+
+}
 
 
 .box .box_login{
@@ -146,6 +157,11 @@ transform: translateX(400px);
 }
 
 .box_login h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+.box_register h2 {
     font-size: 2em;
     color: black;
     text-align: center;
