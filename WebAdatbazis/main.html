@@ -3,7 +3,7 @@
     <head>
         <title>FrissKert</title>
     </head>
-<!--<style>
+<style>
 *{
     margin: 0;
     padding: 0;
@@ -104,7 +104,7 @@ body{
     font-weight: 900;
     display: none;
 }
-</style>-->
+</style>
 <body>
 
     <div class="container">
@@ -112,31 +112,21 @@ body{
             <div class="alert">Your message sent</div>
 
             <div class="inputBox">
-                <input type="email" name="email" id="email" placeholder="Email" />
+                <input type="email"  autocomplete="email" name="email" id="email" placeholder="Email" />
                 
             </div>
 
             <div class="inputBox">
-                <input type="password" name="psw" id="psw" placeholder="Password" />
+                <input type="password" autocomplete="new-password" name="psw" id="psw" placeholder="Password" />
             </div>
 
             <div class="inputBox">
-                <button name="submit" type="submit" id="submit">Submit</button>
+                <button name="submit" autocomplete="submitForm"  type="submit" id="submit">Submit</button>
             </div>
         </form>
     </div>
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 
 </body>
 
@@ -145,7 +135,8 @@ window.onclick = function(event) {
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
         import { getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
-        import { getAuth,createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -153,47 +144,47 @@ window.onclick = function(event) {
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
             apiKey: "AIzaSyAwzqR6MQGlhKIIeUOv54vy31-K4f64oug",
-    authDomain: "frisskert-bc9e8.firebaseapp.com",
-    databaseURL: "https://frisskert-bc9e8-default-rtdb.firebaseio.com",
-    projectId: "frisskert-bc9e8",
-    storageBucket: "frisskert-bc9e8.appspot.com",
-    messagingSenderId: "148948687069",
-    appId: "1:148948687069:web:c60335b3ee8fe1c7afa334"
+            authDomain: "frisskert-bc9e8.firebaseapp.com",
+            databaseURL: "https://frisskert-bc9e8-default-rtdb.firebaseio.com",
+            projectId: "frisskert-bc9e8",
+            storageBucket: "frisskert-bc9e8.appspot.com",
+            messagingSenderId: "148948687069",
+            appId: "1:148948687069:web:c60335b3ee8fe1c7afa334"
         };
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);  
-        const auth = getAuth(app); 
+        const auth = getAuth(); 
         
-
-        submit.addEventListener('click',(e) => {
+        submit.addEventListener('click', (e) => {
 
             var email = document.getElementById('email').value;
-            var password = document.getElementById('psw').value; 
+            var password = document.getElementById('psw').value;
+
 
             createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-            // Signed up  
+                .then((userCredential) => {
+                    // Signed up 
+                    const user = userCredential.user;
 
-                set(ref(database, 'user/' + user.uid),{
-                    email: email,
-                    password: password
-
+                    set(ref(database, 'user/' + user.uid),{
+                        email: email
+                    })
+                    alert('user created!');
+                    // ...
                 })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
 
-            const user = userCredential.user;
-            alert('User created'); 
-            // ...
-            })
-            .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+                    alert('errorMessage');
+                    // ..
+                });
+        })
 
-            alert('errorMessage');
-            // ..
-            });
-        });
+       
+     
       </script> 
 
-</html>
+</html> 
