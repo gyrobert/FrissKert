@@ -46,7 +46,7 @@ body{
     overflow: hidden;
 }
 
-.inputBox input[type="email"], .inputBox input[type="password"]{
+.inputBox input[type="text"], input[type="email"], .inputBox input[type="password"]{
     width: 100%;
     height: 50px;
     border-radius: 5px;
@@ -108,22 +108,21 @@ body{
 <body>
 
     <div class="container">
-        <form action="" id="contactForm">
             <div class="alert">Your message sent</div>
 
             <div class="inputBox">
-                <input type="email"  autocomplete="email" name="email" id="email" placeholder="Email" />
+                <input type="email" name="email" id="email" placeholder="Email" />
                 
             </div>
 
             <div class="inputBox">
-                <input type="password" autocomplete="new-password" name="psw" id="psw" placeholder="Password" />
+                <input type="password" name="psw" id="psw" placeholder="Password" />
             </div>
 
             <div class="inputBox">
-                <button name="submit" autocomplete="submitForm"  type="submit" id="submit">Submit</button>
+                <button name="submit" type="submit" id="submit">Submit</button>
             </div>
-        </form>
+    
     </div>
 
 
