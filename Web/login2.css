@@ -30,7 +30,7 @@ header {
 
 .FrissKert{
     font-size: 2em;
-    color: floralwhite;
+    color: black;
     user-select: none;
 
 }
@@ -38,7 +38,7 @@ header {
 .navigacio a {
     position: relative;
     font-size: 1.1em;
-    color: yellow;
+    color: black;
     text-decoration: none;
     font-weight: 500;
     margin-left: 20px;
