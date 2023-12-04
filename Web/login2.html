@@ -81,7 +81,7 @@
                     <label>Jelszo</label>
                 </div>
             </div>
-                <button type="submit" class="btnBejelentkezes" id="submitsingnup" >Regisztracio </button>
+                <button type="submit" class="btnBejelentkezes" name="submitsingnup" id="submitsingnup" >Regisztracio </button>
                 <div class="bejelentkezes-registracio">
                     <p>Rendelkezik felhasználo fiokkal? <a href="#"
                         class="bejelentkezes-link">Bejelentkezes </a></p>
@@ -93,7 +93,7 @@
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
+    <script type="module">
 
               // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
@@ -120,7 +120,7 @@
         const database = getDatabase(app);  
         const auth = getAuth(); 
         
-        submitsignup.addEventListener('click', (e) => {
+        submitsingnup.addEventListener('click', (e) => {
 
             var nev = document.getElementById('nev').value;
             var knev = document.getElementById('knev').value;
