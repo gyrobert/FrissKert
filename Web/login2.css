@@ -83,6 +83,10 @@ header {
     color:black
 }
 
+.welcome{
+    background: floralwhite;
+}
+
 
 .box{
     position: flex;
@@ -97,8 +101,15 @@ header {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: height s ease,width .2s ease;
+    transform: scale(0);
+    transition: height .2s ease,width .2s ease;
+    transition: transform .5s ease;
 }
+
+.box.activepopup{
+    transform: scale(1);
+}
+
 .box.active{
    height: 800px;
    min-width:  50px;
