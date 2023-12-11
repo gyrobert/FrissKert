@@ -1,8 +1,20 @@
-import React from 'react';
-import Eladok from '../FrissKert_App/screens/Eladok';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <Eladok />
+    <View style={styles.container}>
+      <Text>Open up Apyour app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
