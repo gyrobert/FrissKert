@@ -27,3 +27,9 @@ iconClose.addEventListener('click', () => {
      
       
 
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "www.yoursite.com";
+    };
+</script>
