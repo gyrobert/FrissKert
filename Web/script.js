@@ -1,3 +1,4 @@
+
 const box = document.querySelector('.box');
 const registraciolink = document.querySelector('.regisztracio-link');
 const bejelentkezeslink = document.querySelector('.bejelentkezes-link');
@@ -25,6 +26,14 @@ iconClose.addEventListener('click', () => {
     box.classList.remove('active');
 });   
      
-      
+// document.addEventListener("DOMContentLoaded", event => {
+//     const myPost = database.collection('Products').doc('P1');
+
+// myPost.get()
+//     .then( document => {
+//         const data = document.data();
+//     })
 
 
+
+// });
