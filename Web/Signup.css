@@ -1,0 +1,16 @@
+.rendez{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid green;
+     }
+body {
+    background-image: url('Hatter.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+h1{
+    text-align: center;
+}
