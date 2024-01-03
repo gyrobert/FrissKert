@@ -48,8 +48,8 @@ const auth = getAuth();
         
                 
                 if (productsArray.length > 0) {
-                    const firstProduct = productsArray[0];
-                    ar = firstProduct.Ar;
+                    const firstProduct = productsArray[1];
+                    ar = firstProduct.Email;  
                     console.log("Az első termék ára:", ar);
                     //document.getElementById("name").innerHTML = ar;
         
@@ -57,10 +57,51 @@ const auth = getAuth();
                     console.log("Nincs rendelkezésre álló termék.");
                 }
                 
-        
+                
             } else {
                 console.log("No data available");
             }
+            createBoxes();
+
+function createBoxes() {
+    const container = document.getElementById('container');
+    const boxCount = prompt('Adja meg a dobozok számát:');
+
+    // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
+    if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
+        container.innerHTML = ''; // Ürítsük a konténert
+
+        for (let i = 0; i < boxCount; i++) {
+            let ar=i+1;
+            let boxId = `box${i}`
+            const newBox = document.createElement('div');
+            newBox.classList.add('box_login');
+            newBox.id = boxId;
+            newBox.innerHTML = `
+            <h2>${ar}</h2>
+                <form action="#">
+                    <div class="bemenet-box">
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="bemenet-box">
+                        <input type="password" required>
+                        <label>Jelszo</label>
+                    </div>
+                    <a href="vasarlok.html">
+                        <button type="submit" id="bejelent" class="btnBejelentkezes">Bejelentkezes</button>
+                    </a>
+                    <div class="bejelentkezes-registracio">
+                        <p>Nincs felhasználói fiókja? <a href="#" class="regisztracio-link">Regisztráció</a></p>
+                    </div>
+                </form>
+            `;
+            container.appendChild(newBox);
+        }
+    } else {
+        alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
+    }
+}
         }, (error) => {
             console.error(error);
         });

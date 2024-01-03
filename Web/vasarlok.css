@@ -1,0 +1,15 @@
+.box_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box_login {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 200px;
+    box-sizing: border-box;
+    background: blue
+
+    ;
+}
