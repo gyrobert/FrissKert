@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login2.css">
+    
+</head>
+<body>
+
+    <header>
+            <h2 class="FrissKert">FrissKert</h2>
+            <nav class="navigacio">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <button class="btnLogin">Bejelentkezes</button>
+            
+            </nav>
+            
+
+    </header>
+
+    
+    
+
+    </div>
+    <div class="box">
+        <span class="icon_close"><ion-icon name="close-outline"></ion-icon></span>
+        <div class="box_login">
+            <h2>Bejelentkezés</h2>
+            <form action="#">
+                <div class="bemenet-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="bemenet-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Jelszo</label>
+                </div>
+                <a href="vasarlok.html"><button  type="submit" id="bejelent" class="btnBejelentkezes" >Bejelentkezes</button> </a>
+                <div class="bejelentkezes-registracio">
+                    <p>Nincs felhasználoi fiokja? <a 
+                        href="#" class="regisztracio-link">Regisztracio</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="box_register">
+            <h2>Regisztracio</h2>
+            <form action="#">
+                <div class="bemenet-box_left">
+                <div class="bemenet-box ">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" id="nev" required>
+                    <label>Név</label>
+                </div>
+                <div class="bemenet-box ">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" id="knev" required>
+                    <label>Keresztnév</label>
+                </div>
+                <div class="bemenet-box ">
+                    <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                    <input type="tel" id="tel" required>
+                    <label>Telefonsszám</label>
+                </div>
+            
+            
+                <div class="bemenet-box ">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <input type="text" id="cim" required>
+                    <label>Település, utca, házszám</label>
+                </div>
+                <div class="bemenet-box ">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" id="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="bemenet-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" id="psw" required>
+                    <label>Jelszo</label>
+                </div>
+            </div>
+                <button type="submit" class="btnBejelentkezes" name="submitsingnup" id="submitsingnup" >Regisztracio </button>
+                <div class="bejelentkezes-registracio">
+                    <p>Rendelkezik felhasználo fiokkal? <a href="#"
+                        class="bejelentkezes-link">Bejelentkezes </a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="login2.js" type="module"></script> 
+
+ 
+</body>
+</html>

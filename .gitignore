@@ -13,3 +13,4 @@
 **/IntegrationServer/XAStore/
 **/IntegrationServer/packages/Wm*/
 **/.DS_Store
+**/node_modules
