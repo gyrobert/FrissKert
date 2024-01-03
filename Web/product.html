@@ -115,7 +115,7 @@ body{
             </div>
 
             <div class="inputBox">
-                <select id="tipus" name="tipus">
+                <select id="tipus" name="tipus" aria-placeholder="Tipus">
                     <option value="zoldseg">Zoldseg</option>
                     <option value="gyumolcs">Gyumolcs</option>
                 </select>
@@ -219,7 +219,7 @@ body{
                 })
                 .catch((error)=>{
                     alert(error)
-                })
+                });
             }
             submitproduct.addEventListener('click', InsertData);
 
