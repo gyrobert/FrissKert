@@ -127,10 +127,12 @@ body{
 
             <div class="inputBox">
                 <input type="number" name="ar" id="ar" placeholder="Ar" />
+                <label>Ron</label>
             </div>
 
             <div class="inputBox">
                 <input type="number" name="mennyiseg" id="mennyiseg" placeholder="Mennyiseg" />
+                <label>Kg</label>
             </div>
 
             <div class="inputBox">
@@ -202,9 +204,8 @@ body{
 
             function InsertData() {
                 const db = getDatabase();
-                set(ref(database, 'Products/' + email ), {
+                set(ref(database, 'Products/' + email.value ), {
 
-                email: email,
                 tipus: tipus,
                 nev: nev,
                 ar: ar,
