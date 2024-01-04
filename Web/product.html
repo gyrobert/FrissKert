@@ -132,7 +132,7 @@ body{
             </div>
 
             <div class="inputBox">
-                <button name="submit" type="submit" id="submitproduct">Submit</button>
+                <input name="submit" type="submit" id="submitproduct">
             </div>
     
     </div>
@@ -184,7 +184,7 @@ body{
 
             function InsertData() {
                 const db = getDatabase();
-                set(ref(database, 'Products/' + email.value ), {
+                set(ref(database, 'Product/' + email.value ), {
 
                 tipus: tipus,
                 nev: nev,
