@@ -1,4 +1,10 @@
 
+const btn = document.querySelector('.btnLogin');
+btn.addEventListener('click', () => {
+    getValue();
+    sortProduct(selectedValue);
+});
+
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import {getDatabase, ref,set,  child, get, onValue } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
@@ -15,6 +21,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);  
+
 
 
 
@@ -42,7 +49,7 @@ const database = getDatabase(app);
                     });
                 });
         
-                console.log(productsArray);
+                
         
                 
                 if (productsArray.length > 0) {
@@ -59,45 +66,12 @@ const database = getDatabase(app);
             } else {
                 console.log("No data available");
             }
+
+            
             createBoxes();
 
-function createBoxes() {
-    const container = document.getElementById('container');
-    //const boxCount = prompt('Adja meg a dobozok számát:');
-    const boxCount=productsArray.length
-    // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
-    if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
-        container.innerHTML = ''; // Ürítsük a konténert
+            
 
-        for (let i = 0; i < productsArray.length; i++) {
-            const product = productsArray[i];
-            let ar = product.nev;
-           // let ar=i+1;
-            let boxId = `box${i}`
-            const newBox = document.createElement('div');
-            newBox.classList.add('box_termek');
-            newBox.id = boxId;
-            newBox.innerHTML = `
-            <img src="Card2.jpg" alt="" class="product_img">
-            <h2 class="product_title">${product.nev}</h2>
-            <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
-            <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
-                
-                <p>Mennyiség: ${product.mennyiseg}</p>
-                <p>Tipus: ${product.tipus}</p>
-                <p>Település: ${product.telepules}</p>
-                <p>Megye: ${product.megye}</p>
-                <p>Utca: ${product.utca}</p>
-                <p>Házszám: ${product.hazszam}</p>
-                <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
-                <button class="btn"><ion-icon name="cart"></ion-icon></button>
-            `;
-            container.appendChild(newBox);
-        }
-    } else {
-        alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
-    }
-}
         }, (error) => {
             console.error(error);
         });
@@ -112,4 +86,148 @@ function createBoxes() {
           let name = "Feri";
         //document.getElementById("name").innerHTML = pro;
 
+        function getValue() {
+            // Az érték lekérése a legorduló listából
+            selectedValue = document.getElementById("tipus").value;
         
+            // A kiválasztott érték kiírása a konzolra vagy a további feldolgozásra
+            console.log("Kiválasztott érték: " + selectedValue);
+        
+            // Itt további teendők a kiválasztott értékkel
+            // ...
+        }
+        var selectedValue;
+
+        function sortProduct(x){
+            if(x=='osszes'){
+                console.log(productsArray); 
+                createBoxes(); 
+            }
+            else {
+                let sortArray = [];
+                for (let i = 0; i < productsArray.length; i++) {
+                    const product = productsArray[i];
+                    if(product.tipus==x){
+                        console.log(product)
+                        sortArray.push(product)
+                        
+                    }
+                }
+                createBoxesSort(sortArray);
+            }
+
+        }
+
+
+        function createBoxes() {
+            const container = document.getElementById('container');
+            //const boxCount = prompt('Adja meg a dobozok számát:');
+            const boxCount=productsArray.length
+            // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
+            if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
+                container.innerHTML = ''; // Ürítsük a konténert
+        
+                for (let i = 0; i < productsArray.length; i++) {
+                    const product = productsArray[i];
+                    if(product.tipus==selectedValue){
+                        continue;
+                    }
+                    let ar = product.nev;
+                   // let ar=i+1;
+                    let boxId = `box${i}`
+                    const newBox = document.createElement('div');
+                    newBox.classList.add('box_termek');
+                    newBox.id = boxId;
+                    newBox.innerHTML = `
+                    <img src="Card2.jpg" alt="" class="product_img">
+                    <h2 class="product_title">${product.nev}</h2>
+                    <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
+                    <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
+                        
+                        <p>Mennyiség: ${product.mennyiseg}</p>
+                        <p>Tipus: ${product.tipus}</p>
+                        <p>Település: ${product.telepules}</p>
+                        <p>Megye: ${product.megye}</p>
+                        <p>Utca: ${product.utca}</p>
+                        <p>Házszám: ${product.hazszam}</p>
+                        <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
+                        <button class="btn"><ion-icon name="cart"></ion-icon></button>
+                    `;
+                    container.appendChild(newBox);
+                }
+            } else {
+                alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
+            }
+        }
+
+        function createBox(product) {
+            const container = document.getElementById('container');
+            const boxCount = productsArray.length;
+        
+            // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
+            if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
+               // container.innerHTML = ''; // Ürítsük a konténert
+        
+                let ar = product.nev;
+                let boxId = `box1`; // Módosítsd a boxId-t megfelelően, ha szükséges
+                const newBox = document.createElement('div');
+                newBox.classList.add('box_termek');
+                newBox.id = boxId;
+                newBox.innerHTML = `
+                    <img src="Card2.jpg" alt="" class="product_img">
+                    <h2 class="product_title">${product.nev}</h2>
+                    <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
+                    <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
+                    <p>Mennyiség: ${product.mennyiseg}</p>
+                    <p>Tipus: ${product.tipus}</p>
+                    <p>Település: ${product.telepules}</p>
+                    <p>Megye: ${product.megye}</p>
+                    <p>Utca: ${product.utca}</p>
+                    <p>Házszám: ${product.hazszam}</p>
+                    <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
+                    <button class="btn"><ion-icon name="cart"></ion-icon></button>
+                `;
+                container.appendChild(newBox);
+            } else {
+                alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
+            }
+        }
+
+        function createBoxesSort(prodArray) {
+            const container = document.getElementById('container');
+            //const boxCount = prompt('Adja meg a dobozok számát:');
+            const boxCount=prodArray.length
+            // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
+            if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
+                container.innerHTML = ''; // Ürítsük a konténert
+        
+                for (let i = 0; i < prodArray.length; i++) {
+                    const product = prodArray[i];
+                    
+                    let ar = product.nev;
+                   // let ar=i+1;
+                    let boxId = `box${i}`
+                    const newBox = document.createElement('div');
+                    newBox.classList.add('box_termek');
+                    newBox.id = boxId;
+                    newBox.innerHTML = `
+                    <img src="Card2.jpg" alt="" class="product_img">
+                    <h2 class="product_title">${product.nev}</h2>
+                    <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
+                    <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
+                        
+                        <p>Mennyiség: ${product.mennyiseg}</p>
+                        <p>Tipus: ${product.tipus}</p>
+                        <p>Település: ${product.telepules}</p>
+                        <p>Megye: ${product.megye}</p>
+                        <p>Utca: ${product.utca}</p>
+                        <p>Házszám: ${product.hazszam}</p>
+                        <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
+                        <button class="btn"><ion-icon name="cart"></ion-icon></button>
+                    `;
+                    container.appendChild(newBox);
+                }
+            } else {
+                alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
+            }
+        }
