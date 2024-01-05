@@ -1,15 +1,14 @@
- 
-       
-              // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-        import { getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
- 
-        // // TODO: Add SDKs for Firebase products that you want to use
-        // // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // // Your web app's Firebase configuration
-        // // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getDatabase, update, ref} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
             apiKey: "AIzaSyAwzqR6MQGlhKIIeUOv54vy31-K4f64oug",
             authDomain: "frisskert-bc9e8.firebaseapp.com",
@@ -25,41 +24,29 @@
         const database = getDatabase(app);  
         const auth = getAuth(); 
         
-        submitsingnup.addEventListener('click', (e) => {
+        submitlogin.addEventListener('click', (e) => {
 
-            var nev = document.getElementById('nev').value;
-            var knev = document.getElementById('knev').value;
-            var tel = document.getElementById('tel').value;
-            var cim = document.getElementById('cim').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('psw').value;
+            var email = document.getElementById('logemail').value;
+            var password = document.getElementById('logpsw').value;
 
-
-            createUserWithEmailAndPassword(auth, email, password)
+            signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    // Signed up 
+                    // Signed in 
                     const user = userCredential.user;
 
-                    set(ref(database, 'User signup/' + user.uid),{
-                        nev: nev,
-                        keresztnev: knev,
-                        tel: tel,
-                        cim: cim,
-                        email: email
+                    const dt = new Date();
+                    update(ref(database, 'Login/' + user.uid),{
+                        last_login: dt,
                     })
-                    alert('User created!');
+
+                    alert('User logged in!');
                     // ...
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-
+                      
                     alert('errorMessage');
-                    // ..
                 });
-        }); 
-    
-        
-
-
-  
+           
+        });
