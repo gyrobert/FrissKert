@@ -22,7 +22,7 @@ const auth = getAuth();
 
 
         const dbRef = ref(getDatabase());
-        const productsRef = child(dbRef, 'Products');
+        const productsRef = child(dbRef, 'Product');
         const productsArray = [];
         let ar;
         
@@ -39,9 +39,10 @@ const auth = getAuth();
                 const productKeys = Object.keys(productsData);
                 
         
-                productKeys.forEach(key => {
-                    const product = productsData[key];
-                    productsArray.push(product);
+                Object.values(productsData).forEach(productGroup => {
+                    Object.values(productGroup).forEach(product => {
+                        productsArray.push(product);
+                    });
                 });
         
                 console.log(productsArray);
@@ -49,7 +50,7 @@ const auth = getAuth();
                 
                 if (productsArray.length > 0) {
                     const firstProduct = productsArray[1];
-                    ar = firstProduct.Email;  
+                    ar = firstProduct.ar;  
                     console.log("Az első termék ára:", ar);
                     //document.getElementById("name").innerHTML = ar;
         
@@ -65,36 +66,34 @@ const auth = getAuth();
 
 function createBoxes() {
     const container = document.getElementById('container');
-    const boxCount = prompt('Adja meg a dobozok számát:');
-
+    //const boxCount = prompt('Adja meg a dobozok számát:');
+    const boxCount=productsArray.length
     // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
     if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
         container.innerHTML = ''; // Ürítsük a konténert
 
-        for (let i = 0; i < boxCount; i++) {
-            let ar=i+1;
+        for (let i = 0; i < productsArray.length; i++) {
+            const product = productsArray[i];
+            let ar = product.nev;
+           // let ar=i+1;
             let boxId = `box${i}`
             const newBox = document.createElement('div');
-            newBox.classList.add('box_login');
+            newBox.classList.add('box_termek');
             newBox.id = boxId;
             newBox.innerHTML = `
-            <h2>${ar}</h2>
-                <form action="#">
-                    <div class="bemenet-box">
-                        <input type="email" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="bemenet-box">
-                        <input type="password" required>
-                        <label>Jelszo</label>
-                    </div>
-                    <a href="vasarlok.html">
-                        <button type="submit" id="bejelent" class="btnBejelentkezes">Bejelentkezes</button>
-                    </a>
-                    <div class="bejelentkezes-registracio">
-                        <p>Nincs felhasználói fiókja? <a href="#" class="regisztracio-link">Regisztráció</a></p>
-                    </div>
-                </form>
+            <img src="Card2.jpg" alt="" class="product_img">
+            <h2 class="product_title">${product.nev}</h2>
+            <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
+            <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
+                
+                <p>Mennyiség: ${product.mennyiseg}</p>
+                <p>Tipus: ${product.tipus}</p>
+                <p>Település: ${product.telepules}</p>
+                <p>Megye: ${product.megye}</p>
+                <p>Utca: ${product.utca}</p>
+                <p>Házszám: ${product.hazszam}</p>
+                <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
+                <button class="btn"><ion-icon name="cart"></ion-icon></button>
             `;
             container.appendChild(newBox);
         }
