@@ -24,7 +24,7 @@
         const database = getDatabase(app);  
         const auth = getAuth(); 
         
-        submitlogin.addEventListener('click', (e) => {
+        bejelent.addEventListener('click', (e) => {
 
             var email = document.getElementById('logemail').value;
             var password = document.getElementById('logpsw').value;
