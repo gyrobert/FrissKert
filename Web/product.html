@@ -186,8 +186,9 @@ body{
         var utca = document.getElementById('utca').value;
         var hazszam = document.getElementById('hazszam').value;
   
+        const emailKey = email.replace(/[.#$@[\]/]/g, '_'); // A Firebase kulcsnak megfelelővé alakítás
         const db = getDatabase();
-        set(ref(database, 'Product/' + email), {
+        set(ref(database, 'Product/' + emailKey), {
           tipus: tipus,
           nev: nev,
           ar: ar,
