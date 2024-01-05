@@ -162,7 +162,7 @@ body{
   
       const firebaseConfig = {
         // Firebase konfigurációs adatok
-        apiKey: "AIzaSyAwzqR6MQGlhKIIeUOv54vy31-K4f64oug",
+            apiKey: "AIzaSyAwzqR6MQGlhKIIeUOv54vy31-K4f64oug",
             authDomain: "frisskert-bc9e8.firebaseapp.com",
             databaseURL: "https://frisskert-bc9e8-default-rtdb.firebaseio.com",
             projectId: "frisskert-bc9e8",
@@ -173,9 +173,9 @@ body{
   
       const app = initializeApp(firebaseConfig);
       const database = getDatabase(app);
-      const auth = getAuth();
   
       document.getElementById('submitproduct').addEventListener('click', function () {
+        //Beirt adatok átvétele 
         var email = document.getElementById('email').value;
         var tipus = document.getElementById('tipus').value;
         var nev = document.getElementById('nev').value;
