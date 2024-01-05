@@ -157,8 +157,8 @@ body{
   
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-      import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
-      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+      import { getDatabase, push, ref } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+      
   
       const firebaseConfig = {
         // Firebase konfigurációs adatok
@@ -188,7 +188,7 @@ body{
   
         const emailKey = email.replace(/[.#$@[\]/]/g, '_'); // A Firebase kulcsnak megfelelővé alakítás
         const db = getDatabase();
-        set(ref(database, 'Product/' + emailKey), {
+        push(ref(database, 'Product/' + emailKey), {
           tipus: tipus,
           nev: nev,
           ar: ar,
