@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>FrissKert</title>
+        <meta charset="UTF-8">
     </head>
 <style>
 *{
@@ -107,10 +108,9 @@ body{
 </style>
 <body>
     <div class="container">
-      <div class="alert">Your message sent</div>
   
       <div class="inputBox">
-        <input type="email" name="email" id="email" placeholder="Email" />
+        <input type="email" name="email" id="email" placeholder="Email" required/>
       </div>
   
       <div class="inputBox">
@@ -121,37 +121,37 @@ body{
       </div>
   
       <div class="inputBox">
-        <input type="text" name="nev" id="nev" placeholder="Nev" />
+        <input type="text" name="nev" id="nev" placeholder="Nev" required/>
       </div>
   
       <div class="inputBox">
-        <input type="number" name="ar" id="ar" placeholder="Ar" />
+        <input type="number" name="ar" id="ar" placeholder="Ar" required/>
         <label>Ron/Kg</label>
       </div>
   
       <div class="inputBox">
-        <input type="number" name="mennyiseg" id="mennyiseg" placeholder="Mennyiseg" />
+        <input type="number" name="mennyiseg" id="mennyiseg" placeholder="Mennyiseg" required/>
         <label>Kg</label>
       </div>
   
       <div class="inputBox">
-        <input type="text" name="megye" id="megye" placeholder="Megye" />
+        <input type="text" name="megye" id="megye" placeholder="Megye" required/>
       </div>
   
       <div class="inputBox">
-        <input type="text" name="telepules" id="telepules" placeholder="Telepules" />
+        <input type="text" name="telepules" id="telepules" placeholder="Telepules" required/>
       </div>
   
       <div class="inputBox">
-        <input type="text" name="utca" id="utca" placeholder="Utca" />
+        <input type="text" name="utca" id="utca" placeholder="Utca" required/>
       </div>
   
       <div class="inputBox">
-        <input type="number" name="hazszam" id="hazszam" placeholder="Hazszam" />
+        <input type="number" name="hazszam" id="hazszam" placeholder="Hazszam" required/>
       </div>
   
       <div class="inputBox">
-        <input name="submit" type="submit" id="submitproduct">
+        <button  type="submit" id="submitproduct" >Hozzáadás</button>
       </div>
     </div>
   
@@ -177,6 +177,12 @@ body{
       document.getElementById('submitproduct').addEventListener('click', function () {
         //Beirt adatok átvétele 
         var email = document.getElementById('email').value;
+
+        if (email.trim() === '') {
+            alert("Please enter an email address!");
+            return; // Ne folytassa a feltöltést, ha az email mező üres
+        }     
+          
         var tipus = document.getElementById('tipus').value;
         var nev = document.getElementById('nev').value;
         var ar = document.getElementById('ar').value;
@@ -200,13 +206,19 @@ body{
         })
           .then(() => {
             alert("Data added successfully!");
+
+            window.location.href = 'vasarlok.html';
+            
           })
           .catch((error) => {
-            alert(error.message);
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                      
+                    alert('errorMessage');
           });
       });
     </script>
   </body>
   
 
-</html> 
+</html>
