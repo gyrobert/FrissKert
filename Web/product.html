@@ -176,7 +176,13 @@ body{
   
       document.getElementById('submitproduct').addEventListener('click', function () {
         //Beirt adatok átvétele 
-        var email = document.getElementById('email').value;   
+        var email = document.getElementById('email').value;
+
+        if (email.trim() === '') {
+            alert("Please enter an email address!");
+            return; // Ne folytassa a feltöltést, ha az email mező üres
+        }     
+          
         var tipus = document.getElementById('tipus').value;
         var nev = document.getElementById('nev').value;
         var ar = document.getElementById('ar').value;
@@ -200,6 +206,8 @@ body{
         })
           .then(() => {
             alert("Data added successfully!");
+
+            window.location.href = 'vasarlok.html';
             
           })
           .catch((error) => {
