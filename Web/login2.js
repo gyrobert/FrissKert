@@ -40,6 +40,7 @@
                     })
 
                     alert('User logged in!');
+                    window.location.href = 'vasarlok.html';
                     // ...
                 })
                 .catch((error) => {

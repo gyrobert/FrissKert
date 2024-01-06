@@ -17,3 +17,24 @@
     background: white;
     margin: 20px; 
 }
+/*Popup*/
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px #000000;
+    border: 2px solid #333;
+    max-width: 400px;
+    width: 15%;
+    flex-direction: row;
+    justify-content: space-between; /* Az elemeket a sor végére helyezi */
+}
+
+.closeButton {
+    margin-bottom: 10px;
+    padding: 5px;
+}

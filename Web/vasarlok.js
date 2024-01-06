@@ -1,3 +1,20 @@
+/*Popup */
+document.getElementById('showPopup').addEventListener('click', function () {
+
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+});
+
+document.getElementById('closePopup').addEventListener('click', function () {
+
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+});
+
+document.getElementById('newproduct').addEventListener('click', function () {
+
+    window.location.href = 'product.html';
+});
 
 const btn = document.querySelector('.btnLogin');
 btn.addEventListener('click', () => {
@@ -7,7 +24,8 @@ btn.addEventListener('click', () => {
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import {getDatabase, ref,set,  child, get, onValue } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+import {getDatabase, ref,  child,  onValue } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+import { getAuth,signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAwzqR6MQGlhKIIeUOv54vy31-K4f64oug",
@@ -21,8 +39,21 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);  
+const auth = getAuth(); 
 
+document.getElementById('signout').addEventListener('click', (e) => {
 
+  
+        firebase.auth().signOut()
+          .then(() => {
+            console.log('Sikeres kijelentkezés');
+            window.location.href = 'login2.html';
+          })
+          .catch((error) => {
+            console.error('Kijelentkezési hiba:', error);
+          });
+      
+    });
 
 
         const dbRef = ref(getDatabase());

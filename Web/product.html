@@ -105,10 +105,23 @@ body{
     font-weight: 900;
     display: none;
 }
+.backbutton{
+ 
+ width: 100%;    
+ padding: 10px 20px;
+ border: none;
+ outline: none;
+ color: #FFF;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+}
 </style>
 <body>
     <div class="container">
-  
+      <div class="backbutton">
+        <button type="submit" id="back" >X</button>
+      </div>
       <div class="inputBox">
         <input type="email" name="email" id="email" placeholder="Email" required/>
       </div>
@@ -156,6 +169,11 @@ body{
     </div>
   
     <script type="module">
+
+      document.getElementById('back').addEventListener('click', function () {
+        window.location.href = 'vasarlok.html';
+      });
+
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
       import { getDatabase, push, ref } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
       

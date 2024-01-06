@@ -48,6 +48,7 @@
                         email: email
                     })
                     alert('User created!');
+                    window.location.href = 'login2.html';
                     // ...
                 })
                 .catch((error) => {
