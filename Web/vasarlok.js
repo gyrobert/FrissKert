@@ -87,7 +87,7 @@ document.getElementById('signout').addEventListener('click', (e) => {
                     const firstProduct = productsArray[1];
                     ar = firstProduct.ar;  
                     console.log("Az első termék ára:", ar);
-                    //document.getElementById("name").innerHTML = ar;
+                    
         
                 } else {
                     console.log("Nincs rendelkezésre álló termék.");
@@ -114,18 +114,13 @@ document.getElementById('signout').addEventListener('click', (e) => {
             console.log(productsArray.length);
           
           
-          let name = "Feri";
-        //document.getElementById("name").innerHTML = pro;
+          
+        
 
         function getValue() {
-            // Az érték lekérése a legorduló listából
+            
             selectedValue = document.getElementById("tipus").value;
         
-            // A kiválasztott érték kiírása a konzolra vagy a további feldolgozásra
-            console.log("Kiválasztott érték: " + selectedValue);
-        
-            // Itt további teendők a kiválasztott értékkel
-            // ...
         }
         var selectedValue;
 
@@ -152,7 +147,7 @@ document.getElementById('signout').addEventListener('click', (e) => {
 
         function createBoxes() {
             const container = document.getElementById('container');
-            //const boxCount = prompt('Adja meg a dobozok számát:');
+            
             const boxCount=productsArray.length
             // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
             if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
@@ -164,7 +159,7 @@ document.getElementById('signout').addEventListener('click', (e) => {
                         continue;
                     }
                     let ar = product.nev;
-                   // let ar=i+1;
+                   
                     let boxId = `box${i}`
                     const newBox = document.createElement('div');
                     newBox.classList.add('box_termek');
@@ -175,20 +170,17 @@ document.getElementById('signout').addEventListener('click', (e) => {
                     <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
                     <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
                         
-                        <p>Mennyiség: ${product.mennyiseg}</p>
+                        
                         <p>Tipus: ${product.tipus}</p>
                         <p>Település: ${product.telepules}</p>
                         <p>Megye: ${product.megye}</p>
                         <p>Utca: ${product.utca}</p>
                         <p>Házszám: ${product.hazszam}</p>
-                        <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
                         <button class="btn"><ion-icon name="cart"></ion-icon></button>
                     `;
                     container.appendChild(newBox);
                 }
-            } else {
-                alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
-            }
+            } 
         }
 
         function createBox(product) {
@@ -200,7 +192,6 @@ document.getElementById('signout').addEventListener('click', (e) => {
                // container.innerHTML = ''; // Ürítsük a konténert
         
                 let ar = product.nev;
-                let boxId = `box1`; // Módosítsd a boxId-t megfelelően, ha szükséges
                 const newBox = document.createElement('div');
                 newBox.classList.add('box_termek');
                 newBox.id = boxId;
@@ -209,24 +200,21 @@ document.getElementById('signout').addEventListener('click', (e) => {
                     <h2 class="product_title">${product.nev}</h2>
                     <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
                     <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
-                    <p>Mennyiség: ${product.mennyiseg}</p>
+                    
                     <p>Tipus: ${product.tipus}</p>
                     <p>Település: ${product.telepules}</p>
                     <p>Megye: ${product.megye}</p>
                     <p>Utca: ${product.utca}</p>
                     <p>Házszám: ${product.hazszam}</p>
-                    <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
                     <button class="btn"><ion-icon name="cart"></ion-icon></button>
                 `;
                 container.appendChild(newBox);
-            } else {
-                alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
-            }
+            } 
         }
 
         function createBoxesSort(prodArray) {
             const container = document.getElementById('container');
-            //const boxCount = prompt('Adja meg a dobozok számát:');
+        
             const boxCount=prodArray.length
             // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
             if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
@@ -236,7 +224,7 @@ document.getElementById('signout').addEventListener('click', (e) => {
                     const product = prodArray[i];
                     
                     let ar = product.nev;
-                   // let ar=i+1;
+                   
                     let boxId = `box${i}`
                     const newBox = document.createElement('div');
                     newBox.classList.add('box_termek');
@@ -247,18 +235,15 @@ document.getElementById('signout').addEventListener('click', (e) => {
                     <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
                     <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
                         
-                        <p>Mennyiség: ${product.mennyiseg}</p>
+                        
                         <p>Tipus: ${product.tipus}</p>
                         <p>Település: ${product.telepules}</p>
                         <p>Megye: ${product.megye}</p>
                         <p>Utca: ${product.utca}</p>
                         <p>Házszám: ${product.hazszam}</p>
-                        <button class="btnLogin"><ion-icon name="star"></ion-icon></button>
                         <button class="btn"><ion-icon name="cart"></ion-icon></button>
                     `;
                     container.appendChild(newBox);
                 }
-            } else {
-                alert('Kérjük, adjon meg egy érvényes pozitív egész számot.');
-            }
+            } 
         }
