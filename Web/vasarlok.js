@@ -182,7 +182,7 @@ document.getElementById('signout').addEventListener('click', function () {
                         <p>Megye: ${product.megye}</p>
                         <p>Utca: ${product.utca}</p>
                         <p>Házszám: ${product.hazszam}</p>
-                        <button class="btn"><ion-icon name="cart"></ion-icon></button>
+                        <p>Kontakt: ${product.email}</p>
                     `;
                     container.appendChild(newBox);
                 }
@@ -212,7 +212,7 @@ document.getElementById('signout').addEventListener('click', function () {
                     <p>Megye: ${product.megye}</p>
                     <p>Utca: ${product.utca}</p>
                     <p>Házszám: ${product.hazszam}</p>
-                    <button class="btn"><ion-icon name="cart"></ion-icon></button>
+                    <p>Kontakt: ${product.email}</p>
                 `;
                 container.appendChild(newBox);
             } 
@@ -247,7 +247,7 @@ document.getElementById('signout').addEventListener('click', function () {
                         <p>Megye: ${product.megye}</p>
                         <p>Utca: ${product.utca}</p>
                         <p>Házszám: ${product.hazszam}</p>
-                        <button class="btn"><ion-icon name="cart"></ion-icon></button>
+                        <p>Kontakt: ${product.email}</p>
                     `;
                     container.appendChild(newBox);
                 }
