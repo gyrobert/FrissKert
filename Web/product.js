@@ -26,7 +26,7 @@ document.getElementById('back').addEventListener('click', function () {
     var email = document.getElementById('email').value;
 
     if (email.trim() === '') {
-        alert("Please enter an email address!");
+        alert("Irjon be egy email cimet!");
         return; // Ne folytassa a feltöltést, ha az email mező üres
     }     
       
@@ -40,7 +40,7 @@ document.getElementById('back').addEventListener('click', function () {
     var hazszam = document.getElementById('hazszam').value;
 
     const emailKey = email.replace(/[.#$@[\]/]/g, '_'); // A Firebase kulcsnak megfelelővé alakítás
-    const db = getDatabase();
+
     push(ref(database, 'Product/' + emailKey), {
       tipus: tipus,
       nev: nev,
