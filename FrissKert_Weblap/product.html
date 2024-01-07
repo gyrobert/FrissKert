@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FrissKert</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="product.css">
+        <link rel="stylesheet" href="login2.css">
+
+    </head>
+<style>
+</style>
+<header>
+    <h2 class="FrissKert">FrissKert</h2>
+    <nav class="navigacio">
+        <div class="backbutton">
+            <button type="submit" id="back" ><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
+          </div>    
+    </nav>
+    
+
+</header>
+<body>
+    <div class="container">
+        <h2>Adja meg a termék adatait</h2>
+      
+      <div class="inputBox">
+        <input type="email" name="email" id="email" placeholder="Email" required/>
+      </div>
+  
+      <div class="inputBox">
+        <select id="tipus" name="tipus" aria-placeholder="Tipus">
+          <option value="zoldseg">Zöldség</option>
+          <option value="gyumolcs">Gyümölcs</option>
+        </select>
+      </div>
+  
+      <div class="inputBox">
+        <input type="text" name="nev" id="nev" placeholder="Név" required/>
+      </div>
+  
+      <div class="inputBox">
+        <input type="number" name="ar" id="ar" placeholder="Ár" required/>
+        <label>Ron/Kg</label>
+      </div>
+  
+      <div class="inputBox">
+        <input type="number" name="mennyiseg" id="mennyiseg" placeholder="Mennyiség" required/>
+        <label>Kg</label>
+      </div>
+  
+      <div class="inputBox">
+        <input type="text" name="megye" id="megye" placeholder="Megye" required/>
+      </div>
+  
+      <div class="inputBox">
+        <input type="text" name="telepules" id="telepules" placeholder="Település" required/>
+      </div>
+  
+      <div class="inputBox">
+        <input type="text" name="utca" id="utca" placeholder="Utca" required/>
+      </div>
+  
+      <div class="inputBox">
+        <input type="number" name="hazszam" id="hazszam" placeholder="Házszám" required/>
+      </div>
+  
+      <div class="inputBox">
+        <button  type="submit" id="submitproduct" >Hozzáadás</button>
+      </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="product.js" type="module"></script>
+    
+  </body>
+  
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login2.css">
+    <link rel="stylesheet" href="vasarlok.css">
+
+</head>
+<body>
+
+    <header>
+        <h2 class="FrissKert">FrissKert</h2>
+        <nav class="navigacio">
+            <button id="showPopup"><ion-icon name="search"></ion-icon></button>
+            <button id="newproduct"><ion-icon name="duplicate-outline"></ion-icon></button>
+            <button id="signout"><ion-icon name="log-out-outline"></ion-icon></button>
+        </nav>     
+    </header>
+
+    <div id="popup" class="popup">
+        
+        <select id="tipus" name="tipus">
+            <option value="zoldseg">zoldseg</option>
+            <option value="gyumolcs">gyumolcs</option>
+            <option value="osszes">Osszes</option>
+        </select>
+        
+        <button class="btnLogin"><ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-icon></button>
+        <button class="closeButton" id="closePopup">Close</button>
+    </div>
+
+    <div id="container" class="box_container"></div>
+    <!-- <button id="addButton">Doboxok létrehozása</button> -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="vasarlok.js" type="module"></script>
+
+
+</body>
+</html>
