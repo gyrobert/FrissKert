@@ -34,6 +34,7 @@ A weboldal elindításához szükséges előkészületek:
   -> https://www.apachefriends.org/download.html
   
   !Figyelni a verizóra: Windows: XAMPP 8.2.12, macOS: XAMPP 8.2.4
+  
 3.Letölteni a projekt FrissKert_Weblap.zip file-t az alábbi link segítségével
   -> https://github.com/gyrobert/FrissKert
   
