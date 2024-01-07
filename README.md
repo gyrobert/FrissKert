@@ -29,11 +29,14 @@ A weboldal elindításához szükséges előkészületek:
 
 1.Instalálni a Chrome böngészőt az alábbi link segítségével
   -> https://support.google.com/chrome/answer/95346?hl=en&co=GENIE.Platform%3DDesktop
+  
 2.Instalálni XAMPP Web Servert az alábbi link segítségével
   -> https://www.apachefriends.org/download.html
+  
   !Figyelni a verizóra: Windows: XAMPP 8.2.12, macOS: XAMPP 8.2.4
 3.Letölteni a projekt FrissKert_Weblap.zip file-t az alábbi link segítségével
   -> https://github.com/gyrobert/FrissKert
+  
   
 A weboldal elindítása:
 
