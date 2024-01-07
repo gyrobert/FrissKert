@@ -3,37 +3,38 @@ Projektünk célja, hogy hozzá segítsük az embereket a friss zöldség és gy
 
 A projekt tervezésekor a következő célok kerültek megfogalmazásra:
 
-•	megkönnyíti a vásárlók mindennapi vásárlásait
-•	segít a friss és házi termékek (zöldségek illetve gyümölcsök) egyszerűbb elérését 
-•	gyorsabb és hatékonyabb vásárlás
-•	egyszerű interakció a felhasználó és az adott használati felület között
+1.megkönnyíti a vásárlók mindennapi vásárlásait
+2.segít a friss és házi termékek (zöldségek illetve gyümölcsök) egyszerűbb elérését 
+3.gyorsabb és hatékonyabb vásárlás
+4.egyszerű interakció a felhasználó és az adott használati felület között
 
 A weboldal funkciói a következők:
 
-•	Regisztráció: Az alkalmazás használata kizárólag regisztrált felhasználók számára engedélyezett. Az alkalmazás megnyitása után a Regisztráció gombon keresztül érjük el, azt hogy tudjunk regisztrálni. Regisztrációhoz a felhasználónak névre, telefonszámra, lakcímre, email címre és jelszóra van szüksége.
-•	Bejelentkezés: Ha már regisztrált a felhasználó, utána a bejelentkezésnél már csak email cimre és a jelszóra lesz szüksége a bejelentkezéshez.
-•	Elemek böngészése: Bejelentkezés után a FrissKert felületén már lehet az eladók és a terményeik között keresgélni.
-•	Új elemek feltöltése: Új zöldségeket illetve gyümölcsöket lehet feltölteni a weboldalra.
-•	Kapcsolatfelvétel emailen: Email cim által kommunikálhatnak az eladó és a vásárló egymás között.
+1.	Regisztráció: Az alkalmazás használata kizárólag regisztrált felhasználók számára engedélyezett. Az alkalmazás megnyitása után a Regisztráció gombon keresztül érjük el, azt hogy tudjunk regisztrálni. Regisztrációhoz a felhasználónak névre, telefonszámra, lakcímre, email címre és jelszóra van szüksége.
+2.	Bejelentkezés: Ha már regisztrált a felhasználó, utána a bejelentkezésnél már csak email cimre és a jelszóra lesz szüksége a bejelentkezéshez.
+3.	Elemek böngészése: Bejelentkezés után a FrissKert felületén már lehet az eladók és a terményeik között keresgélni.
+4.	Új elemek feltöltése: Új zöldségeket illetve gyümölcsöket lehet feltölteni a weboldalra.
+5.	Kapcsolatfelvétel emailen: Email cim által kommunikálhatnak az eladó és a vásárló egymás között.
 
 A weboldal elindításához szükségesek a következő követelmények biztosítása:
 
-•	Asztali gép vagy laptop
-•	internet kapcsolat
-•	Böngésző: Chrome 120.0.6099.131+, Safari 17.0+ (a popup ablakok hátterének blur-je nem jelenik meg)
-•	Windows 10 pro+ vagy macOS 14.0+ operációs rendszer
-•	Windows: XAMPP 8.2.12, macOS: XAMPP 8.2.4
-•	Tárhely: kb. 200 MB
+1.Asztali gép vagy laptop
+2.Internet kapcsolat
+3.Böngésző: Chrome 120.0.6099.131+, Safari 17.0+ (a popup ablakok hátterének blur-je nem jelenik meg)
+4.Windows 10 pro+ vagy macOS 14.0+ operációs rendszer
+5.Windows: XAMPP 8.2.12, macOS: XAMPP 8.2.4
+6.Tárhely: kb. 200 MB
 
 A weboldal elindításához szükséges előkészületek:
 
-• Instalálni a Chrome böngészőt az alábbi link segítségével
+1.Instalálni a Chrome böngészőt az alábbi link segítségével
   -> https://support.google.com/chrome/answer/95346?hl=en&co=GENIE.Platform%3DDesktop
-• Instalálni XAMPP Web Servert az alábbi link segítségével
+2.Instalálni XAMPP Web Servert az alábbi link segítségével
   -> https://www.apachefriends.org/download.html
   !Figyelni a verizóra: Windows: XAMPP 8.2.12, macOS: XAMPP 8.2.4
-• Letölteni a projekt FrissKert_Weblap.zip file-t az alábbi link segítségével
+3.Letölteni a projekt FrissKert_Weblap.zip file-t az alábbi link segítségével
   -> https://github.com/gyrobert/FrissKert
+  
 A weboldal elindítása:
 
 1. Megnyítjuk az XAMPP Web Server applikácíot
