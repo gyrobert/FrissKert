@@ -39,7 +39,7 @@
                         last_login: dt,
                     })
 
-                    alert('User logged in!');
+                    alert('Sikeres bejelentkezés!');
                     window.location.href = 'vasarlok.html';
                     // ...
                 })

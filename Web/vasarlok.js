@@ -41,17 +41,23 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);  
 const auth = getAuth(); 
 
-document.getElementById('signout').addEventListener('click', (e) => {
+document.getElementById('signout').addEventListener('click', function () {
 
+
+    signOut(auth).then(() => {
+        // Sign-out successful.
+         // An error happened.
+         const errorCode = error.code;
+         const errorMessage = error.message;
+           
+         alert('errorMessage');
+        
+      }).catch((error) => {
+        // An error happened.
+        alert('Sikeres kijelentkezés');
+        window.location.href = 'login2.html';
+      });
   
-        firebase.auth().signOut()
-          .then(() => {
-            console.log('Sikeres kijelentkezés');
-            window.location.href = 'login2.html';
-          })
-          .catch((error) => {
-            console.error('Kijelentkezési hiba:', error);
-          });
       
     });
 

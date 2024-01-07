@@ -47,7 +47,7 @@
                         cim: cim,
                         email: email
                     })
-                    alert('User created!');
+                    alert('Felhasználó sikeresen létrehozva!');
                     window.location.href = 'login2.html';
                     // ...
                 })
