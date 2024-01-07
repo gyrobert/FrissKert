@@ -177,9 +177,9 @@ document.getElementById('signout').addEventListener('click', function () {
                     <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
                         
                         
-                        <p>Tipus: ${product.tipus}</p>
-                        <p>Település: ${product.telepules}</p>
+                        <p>A termék tipusa: ${product.tipus}</p>
                         <p>Megye: ${product.megye}</p>
+                        <p>Település: ${product.telepules}</p>
                         <p>Utca: ${product.utca}</p>
                         <p>Házszám: ${product.hazszam}</p>
                         <p>Kontakt: ${product.email}</p>
@@ -195,7 +195,7 @@ document.getElementById('signout').addEventListener('click', function () {
         
             // Ellenőrizzük, hogy a megadott érték egy pozitív egész szám-e
             if (!isNaN(boxCount) && boxCount > 0 && Number.isInteger(parseFloat(boxCount))) {
-               // container.innerHTML = ''; // Ürítsük a konténert
+                container.innerHTML = ''; // Ürítsük a konténert
         
                 let ar = product.nev;
                 const newBox = document.createElement('div');
@@ -207,12 +207,12 @@ document.getElementById('signout').addEventListener('click', function () {
                     <span class="product_price">Ár/Kg:${product.ar} Lei</span><br>
                     <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
                     
-                    <p>Tipus: ${product.tipus}</p>
-                    <p>Település: ${product.telepules}</p>
-                    <p>Megye: ${product.megye}</p>
-                    <p>Utca: ${product.utca}</p>
-                    <p>Házszám: ${product.hazszam}</p>
-                    <p>Kontakt: ${product.email}</p>
+                    <p>A termék tipusa: ${product.tipus}</p>
+                        <p>Megye: ${product.megye}</p>
+                        <p>Település: ${product.telepules}</p>
+                        <p>Utca: ${product.utca}</p>
+                        <p>Házszám: ${product.hazszam}</p>
+                        <p>Kontakt: ${product.email}</p>
                 `;
                 container.appendChild(newBox);
             } 
@@ -242,12 +242,12 @@ document.getElementById('signout').addEventListener('click', function () {
                     <span class="product_menyiseg">Elérhető menyiség:${product.mennyiseg} kg</span>
                         
                         
-                        <p>Tipus: ${product.tipus}</p>
-                        <p>Település: ${product.telepules}</p>
-                        <p>Megye: ${product.megye}</p>
-                        <p>Utca: ${product.utca}</p>
-                        <p>Házszám: ${product.hazszam}</p>
-                        <p>Kontakt: ${product.email}</p>
+                    <p>A termék tipusa: ${product.tipus}</p>
+                    <p>Megye: ${product.megye}</p>
+                    <p>Település: ${product.telepules}</p>
+                    <p>Utca: ${product.utca}</p>
+                    <p>Házszám: ${product.hazszam}</p>
+                    <p>Kontakt: ${product.email}</p>
                     `;
                     container.appendChild(newBox);
                 }
