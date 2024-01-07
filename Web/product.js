@@ -42,6 +42,7 @@ document.getElementById('back').addEventListener('click', function () {
     const emailKey = email.replace(/[.#$@[\]/]/g, '_'); // A Firebase kulcsnak megfelelővé alakítás
 
     push(ref(database, 'Product/' + emailKey), {
+      email: email,
       tipus: tipus,
       nev: nev,
       ar: ar,
